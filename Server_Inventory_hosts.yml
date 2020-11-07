@@ -1,0 +1,10 @@
+---
+serverinventory:
+  - configuration_item: 'CMS App FLX'
+    assignment_group: 'Application Development'
+    assigned_To: 'Savannah Kesich'
+    start_date: '11-11-2020 09:00'
+    end_date: '11-11-2020 05:00'
+    short_description: 'Prm team'
+    description: 'Prm team'
+ 

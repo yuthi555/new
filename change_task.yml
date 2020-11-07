@@ -1,0 +1,34 @@
+---
+- name: Create a ticket
+  snow_record:
+    username: admin
+    password: Swiftdzire@0587
+    instance: dev57831
+    state: present
+    table: change_request
+    data:
+      cmdb_ci: "{{item.configuration_item}}"
+      assignment_group: "{{item.assignment_group}}"
+      assigned_to: "{{item.assigned_to}}"
+      start_date: "{{item.start_date}}"
+      end_date: "{{item.end_date}}"
+      short_description: "{{item.short_description}}"
+      description: "{{item.description}}"
+  register: new_change
+- debug:
+    msg: "New change has been created : {{ new_change.record.number }} "
+- name: test change
+  snow_record:
+    username: admin
+    password: Swiftdzire@0587
+    instance: dev57831
+    state: present
+    table: change_task
+    data:
+      short_description: "Sample Task Creation for Change {{ new_change.record.number }}"
+      description: 'Nishant 2021| NON PROD Q3 Linux Patching QA'
+      change_request: "{{ new_change.record.number }}"
+  register: change_task
+- debug:
+    msg: "New change has been created : {{ change_task.record.number }} "  
+  

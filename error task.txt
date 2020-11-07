@@ -1,0 +1,3 @@
+fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'assigned_to'\n\nThe error appear
+s to have been in '/root/snow_test/change_task.yml': line 2, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears t
+o be:\n\n---\n- name: Create a ticket\n  ^ here\n"}
